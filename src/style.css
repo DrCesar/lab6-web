@@ -1,0 +1,92 @@
+html, .body {
+  height: 100%;
+  margin: 0%;
+}
+
+body {
+  height: 94%;
+  margin: 0%;
+}
+
+.game-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.memory-table {
+  padding: 2% 5%;
+	display: flex;
+	flex-wrap: wrap;
+  min-height: 100%;
+  height: 100%;
+  width: 713px;
+  background-image: url(./old-wood-table-top.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.flip-card {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    display: inline-flex;
+    width: 25%;
+    height: 20%;
+    max-height: 20%;
+
+    margin: 1% 0%;
+    cursor: pointer;
+}
+
+.flip-card-new {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+
+}
+
+.flip-card-new .front {
+    position: absolute;
+    transform: rotateX(0deg);
+    transition: transform 500ms ease-in;
+    transition-delay: 450ms;
+    backface-visibility: hidden;
+}
+
+.flip-card-new:hover .front, .flip-card-new:hover .back {
+    opacity: 0.5;
+}
+
+.flip-card-new  .back{
+  top: 0px;
+  left: 0px;
+  margin: 15%;
+  max-width: 70%;
+  height: 70%;
+  position: absolute;
+  transform: rotateY(92deg); 
+  transition: transform 500ms ease-out;   
+  backface-visibility: hidden;
+}
+
+.flip-card-new.flipped .back {
+  transform: rotateY(0deg);
+  transition: transform 500ms ease-in;
+  transition-delay: 450ms;
+}
+
+.flip-card-new.flipped .front {
+  transform: rotateY(-92deg);
+  transition: transform 500ms ease-out;
+}
+
+
